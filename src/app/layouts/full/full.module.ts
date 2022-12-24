@@ -9,6 +9,8 @@ import { SpinnerComponent } from 'app/shared/spinner.component';
 import { NavigationComponent } from 'app/shared/header/navigation.component';
 import { SidebarComponent } from 'app/shared/sidebar/sidebar.component';
 import { RegisterComponent } from 'app/pages/register/register.component';
+import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { DashboardModule } from 'app/dashboard/dashboard.module';
 
 
 
@@ -22,6 +24,7 @@ import { RegisterComponent } from 'app/pages/register/register.component';
     RouterModule.forChild(routes),
     FormsModule,
     NgbModule,
+    DashboardModule
     
   ],
   entryComponents: [],
