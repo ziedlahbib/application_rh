@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './auth-layout-routing.module';
+import { RegisterComponent } from 'app/pages/register/register.component';
 
 
 
@@ -14,11 +15,10 @@ import { routes } from './auth-layout-routing.module';
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-    CommonModule,
     // NgbModule
   ],
   declarations: [
-    
+    RegisterComponent
     ],
 })
 export class AuthLayoutModule { }
