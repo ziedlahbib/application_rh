@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InscriptionComponent } from 'app/pages/usermanagment/inscription/InscriptionComponent';
+
 import { routes } from './auth-layout-routing.module';
-import { AuthLayoutComponent } from './auth-layout.component';
+
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { AuthLayoutComponent } from './auth-layout.component';
     // NgbModule
   ],
   declarations: [
-    InscriptionComponent,
+    
     ],
 })
 export class AuthLayoutModule { }

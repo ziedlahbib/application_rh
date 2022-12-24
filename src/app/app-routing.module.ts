@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
@@ -7,23 +9,17 @@ import { FullComponent } from "./layouts/full/FullComponent";
 export const Approutes: Routes = [
   {
     path: '',
+    redirectTo: 'register',
+    pathMatch: 'full',
+  }, 
+  {
+    path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-      {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
-      {
-        path: 'about',
-        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
-      },
-      {
-        path: 'component',
-        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
-      }
-    ]
-  },
+        {
+      path: '',
+      loadChildren: () => import('./layouts/full/full.module').then(x => x.FullModule)
+  }]}, 
   {
     path: '',
     component: AuthLayoutComponent,
@@ -34,8 +30,17 @@ export const Approutes: Routes = [
       }
     ]
   },
-  {
-    path: '**',
-    redirectTo: '/starter'
-  }
+
 ];
+@NgModule({
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(Approutes,{
+      useHash: true
+    })
+  ],
+  exports: [
+  ],
+})
+export class AppRoutingModule { }

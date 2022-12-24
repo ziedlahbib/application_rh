@@ -5,18 +5,17 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { routes } from './full-routing.module';
-
-import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SpinnerComponent } from 'app/shared/spinner.component';
 import { NavigationComponent } from 'app/shared/header/navigation.component';
 import { SidebarComponent } from 'app/shared/sidebar/sidebar.component';
+import { RegisterComponent } from 'app/pages/register/register.component';
+
+
 
 
 @NgModule({
   declarations: [
-    SpinnerComponent,
-    NavigationComponent,
-    SidebarComponent
+    RegisterComponent
 
   ],
   imports: [
@@ -26,8 +25,9 @@ import { SidebarComponent } from 'app/shared/sidebar/sidebar.component';
     NgbModule,
     
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
+  entryComponents: [],
+  exports: [
+    RouterModule
+  ]
 })
 export class FullModule { }
