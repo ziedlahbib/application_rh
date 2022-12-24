@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AuthLayoutRoutingModule, routes } from './auth-layout-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InscriptionComponent } from 'app/pages/usermanagment/inscription/InscriptionComponent';
+import { routes } from './auth-layout-routing.module';
+import { AuthLayoutComponent } from './auth-layout.component';
 
 
 @NgModule({
@@ -13,9 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    AuthLayoutRoutingModule
     // NgbModule
   ],
-  declarations: [],
+  declarations: [
+    InscriptionComponent,
+    ],
 })
 export class AuthLayoutModule { }

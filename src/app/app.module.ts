@@ -4,14 +4,14 @@ import {
   CommonModule, LocationStrategy,
   PathLocationStrategy
 } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { FullComponent } from './layouts/full/full.component';
+import { FullComponent } from "./layouts/full/FullComponent";
 
 
 import { NavigationComponent } from './shared/header/navigation.component';
@@ -25,6 +25,9 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { RegisterComponent } from './pages/register/register.component';
+
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -36,11 +39,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   declarations: [
     AppComponent,
-    SpinnerComponent,
-    FullComponent,
-    NavigationComponent,
-    SidebarComponent,
     AuthLayoutComponent,
+    FullComponent,
+    RegisterComponent
+   
   ],
   imports: [
     CommonModule,
@@ -63,6 +65,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }
