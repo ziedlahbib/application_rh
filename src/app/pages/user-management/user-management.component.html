@@ -45,7 +45,7 @@
                                             <button
                                               type="button"
                                               class="btn btn-warning"
-                                              [routerLink]="['/user-management/modifier', row.assuId ]">
+                                              [routerLink]="['/user-management/modifier', tr.userId ]">
                                             modifier
                                             </button>
                                           </div>
@@ -53,7 +53,7 @@
                                             <button
                                               type="button"
                                               class="btn btn-danger"
-                                              (click)="supprimer(row)">
+                                              (click)="supprimer(tr)">
                                             supprimer
                                             </button>
                                           </div>
@@ -62,7 +62,12 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <ngb-pagination [collectionSize]="listofuserPAgination" [pageSize]="itemsPerPage" [(page)]="page" [maxSize]="1" [rotate]="true" (pageChange)="paginate($event)"></ngb-pagination>
+                            <div class="col-12" *ngIf="listofuserPAgination">
+                              <mat-paginator [length]="listofuser.length" [pageSize]="6" [pageSizeOptions]="[6, 12, 18]" (page)="paginate($event)">
+                     
+                              </mat-paginator>
+                     
+                            </div>
                         </div>
                     </div>
                 

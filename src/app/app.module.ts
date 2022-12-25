@@ -28,6 +28,9 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './pages/login/login.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
+import { ToastrModule } from 'ngx-toastr';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -51,6 +54,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     UserManagementComponent,
     
+    
        
 
     
@@ -69,6 +73,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useHash: true
     }),
     PerfectScrollbarModule,
+    ToastrModule.forRoot(),
+    MatPaginatorModule
   ],
   providers: [
   

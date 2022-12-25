@@ -13,7 +13,7 @@ import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { DashboardModule } from 'app/dashboard/dashboard.module';
 import { ComponentsModule } from 'app/component/component.module';
 /////////////////////////////////
-
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 //////////////////////////////////////////////////
 
 
@@ -31,6 +31,8 @@ import { ComponentsModule } from 'app/component/component.module';
     DashboardModule,
     ComponentsModule,
     //////////////
+    MatPaginatorModule,
+
   
     
   ],
