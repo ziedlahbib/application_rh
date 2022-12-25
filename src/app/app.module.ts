@@ -29,17 +29,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 import { ToastrModule } from 'ngx-toastr';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { ViewChild} from '@angular/core';;
-import {MatSort, SortDirection} from '@angular/material/sort';
-import { MatTableDataSource,MatTableModule } from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
-
-import { MatChipsModule } from '@angular/material/chips';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
+import { OffreManagementComponent } from './pages/offre-management/offre-management.component';
 
 
 
@@ -64,7 +54,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     NavigationComponent,
     SidebarComponent,
-    UserManagementComponent,
+   
     
     
     
@@ -88,13 +78,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }),
     PerfectScrollbarModule,
     ToastrModule.forRoot(),
-    MatCardModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDialogModule,
-    MatPaginatorModule,
+
     
   ],
   providers: [

@@ -14,7 +14,18 @@ import { DashboardModule } from 'app/dashboard/dashboard.module';
 import { ComponentsModule } from 'app/component/component.module';
 /////////////////////////////////
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { ViewChild} from '@angular/core';;
+import {MatSort, SortDirection} from '@angular/material/sort';
+import { MatTableDataSource,MatTableModule } from '@angular/material/table';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+///////////////////////////////////////////////
 import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.component';
+import { UserManagementComponent } from 'app/pages/user-management/user-management.component';
+import { OffreManagementComponent } from 'app/pages/offre-management/offre-management.component';
 //////////////////////////////////////////////////
 
 
@@ -23,6 +34,8 @@ import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.c
 @NgModule({
   declarations: [
     ModifierComponent,
+    UserManagementComponent,
+    OffreManagementComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +47,13 @@ import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.c
     //////////////
     MatPaginatorModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatPaginatorModule,
 
   
     

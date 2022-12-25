@@ -58,7 +58,7 @@ export class UserManagementComponent implements OnInit {
     this.us.deleteuser(user.userId).subscribe(()=>this.us.getuser().subscribe(
       data=>{
         this.listofuser=data;
-        this.listofuserPAgination=this.listofuser.slice(this.start, this.end);
+        this.dataSource = new MatTableDataSource(this.listofuser);
         this.toastr.error('assurance deleted sucessfuly ','assurance deleted sucessfuly ');
        let audio = new Audio()
        audio.src= "../assets/alert.mp3"
