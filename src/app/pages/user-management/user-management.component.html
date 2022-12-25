@@ -41,54 +41,32 @@
                                             {{tr.email}}
                                         </td>
                                         <td>
-                                          <button></button>
-                                          <button></button>
-                                          <button></button>
+                                          <div class="button-group">
+                                            <button
+                                              type="button"
+                                              class="btn btn-warning"
+                                              [routerLink]="['/user-management/modifier', row.assuId ]">
+                                            modifier
+                                            </button>
+                                          </div>
+                                          <div class="button-group">
+                                            <button
+                                              type="button"
+                                              class="btn btn-danger"
+                                              (click)="supprimer(row)">
+                                            supprimer
+                                            </button>
+                                          </div>
                                           
                                       </td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <ngb-pagination [collectionSize]="listofuserPAgination" [pageSize]="itemsPerPage" [(page)]="page" [maxSize]="1" [rotate]="true" (pageChange)="paginate($event)"></ngb-pagination>
                         </div>
                     </div>
                 
-                <div class="col-md-12">
-                  <div class="card">
-                    <div class="p-3">
-                      <h4 class="card-title mb-0">Advanced Pagination</h4>
-                    </div>
-                    <div class="card-body border-top">
-                      <p>maxSize = 5, rotate = false</p>
-                      <ngb-pagination
-                        [collectionSize]="120"
-                        [(page)]="page2"
-                        [maxSize]="5"
-                        [boundaryLinks]="true"
-                      ></ngb-pagination>
-              
-                      <p>maxSize = 5, rotate = true</p>
-                      <ngb-pagination
-                        [collectionSize]="120"
-                        [(page)]="page2"
-                        [maxSize]="5"
-                        [rotate]="true"
-                        [boundaryLinks]="true"
-                      ></ngb-pagination>
-              
-                      <p>maxSize = 5, rotate = true, ellipses = false</p>
-                      <ngb-pagination
-                        [collectionSize]="120"
-                        [(page)]="page2"
-                        [maxSize]="5"
-                        [rotate]="true"
-                        [ellipses]="false"
-                        [boundaryLinks]="true"
-                      ></ngb-pagination>
-              
-                      <div class="bg-light p-3">Current page: {{ page2 }}</div>
-                    </div>
-                  </div>
-                </div>
+
   
             </div>
           </div>

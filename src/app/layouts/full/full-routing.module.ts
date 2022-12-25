@@ -10,6 +10,7 @@ import { UserManagementComponent } from 'app/pages/user-management/user-manageme
 export const routes: Routes = [
     { path: 'dashboard',           component: DashboardComponent },
     { path: 'user-management',           component: UserManagementComponent },
+    { path: 'user-management/modifier/:id',           component: UserManagementComponent, },
 ];
 
 
