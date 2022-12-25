@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Offre } from 'app/models/offre.model';
 import { TypeOffre } from 'app/models/type-offre';
@@ -13,25 +13,23 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AjouterComponent implements OnInit {
 
-  public offreform: FormGroup;
-  offre:Offre;
+  public offreform : FormGroup;
+  offre:Offre ;
   typeOffre=TypeOffre;
   constructor(private os:OffreServiceService,
     private formBuilder: FormBuilder,private route:Router,private toastr : ToastrService) { }
 
   ngOnInit(): void {
+    this.initForm(); 
   }
 
   initForm() {
     this.offreform = this.formBuilder.group({
       adresse: [''],
-      salaire: [''],
+      salaire: ['',[Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')]],
       datePublication: [''],
       description: [''],
-      typeOffre: [''],
-
-
-      
+      typeOffre: [''],   
   });
 
   this.offreform.valueChanges.subscribe(

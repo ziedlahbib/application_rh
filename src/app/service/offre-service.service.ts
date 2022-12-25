@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class OffreServiceService {
   getoffresUrl="/api/offre/getAllOffre";
   deleteoffreUrl="/api/offre/supprimer-offre";
-  ajoutoffreurl="/api/offre/add-offre"
+  ajoutoffreurl="/api/offre/add-offre";
 
   constructor(private http : HttpClient) { }
 
