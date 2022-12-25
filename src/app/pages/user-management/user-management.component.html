@@ -1,0 +1,100 @@
+
+
+  
+  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">   
+    <button  type="button"class="btn btn-primary btn-round" style="margin: 10px 50px 20px;"  routerLink="/home">acceuil</button>
+    </div>
+  
+  
+     <div class="container-fluid mt--7">
+  
+  
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+  
+            <div class="card-header border-0">
+              <h3 class="mb-0">user List</h3>
+            </div>
+  
+            <div>
+ 
+  
+                  <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Table with Border</h4>
+                        <div class="table-responsive">
+                            <table class="table table-bordered align-middle text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th class="text-dark font-medium fs-4">Username</th>
+                                        <th class="text-dark font-medium fs-4">email</th>
+                                        <th class="text-dark font-medium fs-4">option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let tr of listofuser'>
+                                        <td>
+                                            {{tr.userName}}
+                                        </td>
+                                        <td>
+                                            {{tr.email}}
+                                        </td>
+                                        <td>
+                                          <button></button>
+                                          <button></button>
+                                          <button></button>
+                                          
+                                      </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="p-3">
+                      <h4 class="card-title mb-0">Advanced Pagination</h4>
+                    </div>
+                    <div class="card-body border-top">
+                      <p>maxSize = 5, rotate = false</p>
+                      <ngb-pagination
+                        [collectionSize]="120"
+                        [(page)]="page2"
+                        [maxSize]="5"
+                        [boundaryLinks]="true"
+                      ></ngb-pagination>
+              
+                      <p>maxSize = 5, rotate = true</p>
+                      <ngb-pagination
+                        [collectionSize]="120"
+                        [(page)]="page2"
+                        [maxSize]="5"
+                        [rotate]="true"
+                        [boundaryLinks]="true"
+                      ></ngb-pagination>
+              
+                      <p>maxSize = 5, rotate = true, ellipses = false</p>
+                      <ngb-pagination
+                        [collectionSize]="120"
+                        [(page)]="page2"
+                        [maxSize]="5"
+                        [rotate]="true"
+                        [ellipses]="false"
+                        [boundaryLinks]="true"
+                      ></ngb-pagination>
+              
+                      <div class="bg-light p-3">Current page: {{ page2 }}</div>
+                    </div>
+                  </div>
+                </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  

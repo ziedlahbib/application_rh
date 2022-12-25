@@ -27,6 +27,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpInterceptorService } from './service/http-interceptor.service';
+import { UserManagementComponent } from './pages/user-management/user-management.component';
 
 
 
@@ -48,6 +49,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     NavigationComponent,
     SidebarComponent,
+    UserManagementComponent,
     
        
 

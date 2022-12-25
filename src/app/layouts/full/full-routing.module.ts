@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableComponent } from 'app/component/table/table.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { UserManagementComponent } from 'app/pages/user-management/user-management.component';
 
 export const routes: Routes = [
     { path: 'dashboard',           component: DashboardComponent },
+    { path: 'user-management',           component: UserManagementComponent },
 ];
 
 

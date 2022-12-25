@@ -20,4 +20,7 @@ export class UserServiceService {
   registration(user :User): Observable<User>{
     return this.http.post<User>(`${this.registartionurlUrl}`,user);
   }
+  getuser():Observable<User[]>{
+    return this.http.get<User[]>(`${this.getusersUrl}`);
+  }
 }

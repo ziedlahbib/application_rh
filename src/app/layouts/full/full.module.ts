@@ -11,6 +11,10 @@ import { SidebarComponent } from 'app/shared/sidebar/sidebar.component';
 import { RegisterComponent } from 'app/pages/register/register.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { DashboardModule } from 'app/dashboard/dashboard.module';
+import { ComponentsModule } from 'app/component/component.module';
+/////////////////////////////////
+
+//////////////////////////////////////////////////
 
 
 
@@ -24,7 +28,10 @@ import { DashboardModule } from 'app/dashboard/dashboard.module';
     RouterModule.forChild(routes),
     FormsModule,
     NgbModule,
-    DashboardModule
+    DashboardModule,
+    ComponentsModule,
+    //////////////
+  
     
   ],
   entryComponents: [],
