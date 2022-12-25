@@ -22,10 +22,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 ///////////////////////////////////////////////
 import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.component';
 import { UserManagementComponent } from 'app/pages/user-management/user-management.component';
 import { OffreManagementComponent } from 'app/pages/offre-management/offre-management.component';
+import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.component';
 //////////////////////////////////////////////////
 
 
@@ -36,6 +39,7 @@ import { OffreManagementComponent } from 'app/pages/offre-management/offre-manag
     ModifierComponent,
     UserManagementComponent,
     OffreManagementComponent,
+    AjouterComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +58,8 @@ import { OffreManagementComponent } from 'app/pages/offre-management/offre-manag
     MatInputModule,
     MatDialogModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   
     

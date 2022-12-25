@@ -30,6 +30,7 @@ import { HttpInterceptorService } from './service/http-interceptor.service';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 import { ToastrModule } from 'ngx-toastr';
 import { OffreManagementComponent } from './pages/offre-management/offre-management.component';
+import { AjouterComponent } from './pages/offre-management/ajouter/ajouter.component';
 
 
 
@@ -54,6 +55,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     NavigationComponent,
     SidebarComponent,
+
    
     
     
