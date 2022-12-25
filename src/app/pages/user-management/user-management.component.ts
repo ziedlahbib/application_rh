@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 ///////////////////////////////////:
 import { User } from 'app/models/user.model';
@@ -8,6 +8,8 @@ import {ToastrService} from "ngx-toastr";
 import { PageEvent } from '@angular/material/paginator';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableDataSource,MatTableModule } from '@angular/material/table';
+import {MatSort, SortDirection} from '@angular/material/sort';
 
 @Component({
   selector: 'app-user-management',
@@ -23,13 +25,20 @@ export class UserManagementComponent implements OnInit {
   itemsPerPage: number;
   page: any;
   previousPage: any;
+  displayedColumns = ['username','email','option'];
+  dataSource: MatTableDataSource<User>;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private us:UserServiceService,private toastr : ToastrService,private router:Router) { }
 
   ngOnInit(): void {
     this.us.getuser().subscribe(
       data=>{
         this.listofuser=data;
-        this.listofuserPAgination=this.listofuser.slice(this.start, this.end)
+        //this.listofuserPAgination=this.listofuser.slice(this.start, this.end);
+        this.dataSource=new MatTableDataSource(this.listofuser);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
 
       }
     )
@@ -60,5 +69,9 @@ export class UserManagementComponent implements OnInit {
     )
     );
   }
-
+  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

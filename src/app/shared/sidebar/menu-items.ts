@@ -3,15 +3,15 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
 
   {
-    path: '/gestion des offre',
-    title: 'Alert',
+    path: '/gestion-des-offre',
+    title: 'gestion des offre',
     icon: 'bi bi-bell',
     class: '',
     extralink: false,
     submenu: []
   },
   {
-    path: '/gestion des condidature',
+    path: '/gestion-des-condidature',
     title: 'gestion des condidature',
     icon: 'bi bi-people',
     class: '',
