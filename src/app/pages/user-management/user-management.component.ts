@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'app/models/user.model';
 import { UserServiceService } from 'app/service/user-service.service';
 ////////////////////////////////
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-user-management',
@@ -12,12 +13,12 @@ import { UserServiceService } from 'app/service/user-service.service';
 export class UserManagementComponent implements OnInit {
 
   listofuser:User[];
-  counters = [100, 200, 10];
-  page = 4;
-page2 = 1;
-currentPage = 3;
-disablepage = 3;
-pagecustom = 4;
+  listofuserPAgination:User[];
+  start=0;
+  end=1;
+  itemsPerPage: number;
+  page: any;
+  previousPage: any;
   constructor(private us:UserServiceService) { }
 
   ngOnInit(): void {
@@ -28,6 +29,21 @@ pagecustom = 4;
       }
     )
   }
-
+  loadPage(page: number) {
+    if (page !== this.previousPage) {
+      this.previousPage = page;
+      this.listofuser;
+    }
+  }
+  paginate(event:any) {
+    let startIndex = event.pageSize * event.pageIndex;
+    this.start = startIndex;
+    let endIndex = startIndex + event.pageSize;
+    this.end = endIndex;
+    if (endIndex > this.listofuser.length) {
+      endIndex = this.listofuser.length;
+    }
+    this.listofuserPAgination = this.listofuser.slice(startIndex, endIndex);
+  }
 
 }
