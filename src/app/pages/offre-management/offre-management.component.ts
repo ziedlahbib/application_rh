@@ -15,7 +15,7 @@ import {ToastrService} from "ngx-toastr";
 export class OffreManagementComponent implements OnInit {
 
   listofoffre:Offre[];
-  displayedColumns = ['titre','typeOffre','adresse','description','salaire','datePublication','option'];
+  displayedColumns = ['typeOffre','adresse','description','salaire','datePublication','option'];
   dataSource: MatTableDataSource<Offre>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
