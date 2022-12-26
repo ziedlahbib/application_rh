@@ -58,7 +58,7 @@ modifier(){
       console.log(this.offreform.value);
 
       this.offre=data;
-      this.toastr.success('user modified Successfully ','user modified Successfully');
+      this.toastr.success('offre modified Successfully ','offre modified Successfully');
       let audio = new Audio()
       audio.src= "../assets/alert.mp3"
       audio.src= "../assets/confirm2.mp3"
