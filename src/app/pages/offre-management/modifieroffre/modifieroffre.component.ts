@@ -2,6 +2,7 @@ import { AfterContentInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Offre } from 'app/models/offre.model';
+import { TypeOffre } from 'app/models/type-offre';
 import { OffreServiceService } from 'app/service/offre-service.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -14,6 +15,7 @@ export class ModifieroffreComponent implements OnInit,AfterContentInit {
 
   offre:Offre;
   public offreform: FormGroup;
+  typeOffre=TypeOffre;
   constructor(private toastr : ToastrService,private os:OffreServiceService,private router:ActivatedRoute,
     private route :Router,private formBuilder: FormBuilder) { }
   ngAfterContentInit(): void {

@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'user-management/modifier/:id',           component: ModifierComponent },
     { path: 'ajouteroffre',           component: AjouterComponent },
     { path: 'gestion-des-offre',           component: OffreManagementComponent },
-    { path: 'offre-management/modifier/:id',           component: ModifieroffreComponent },
+    { path: 'modifier/:id',           component: ModifieroffreComponent },
     
     
 ];
