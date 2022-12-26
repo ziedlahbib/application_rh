@@ -73,6 +73,7 @@ export class AjoutCanditatureComponent implements OnInit {
          audio.src= "../assets/confirm2.mp3"
          audio.load();
          audio.play();
+         this.route.navigate(["/candidature-management"])
         }
      
     );
