@@ -31,6 +31,7 @@ import { OffreManagementComponent } from 'app/pages/offre-management/offre-manag
 import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.component';
 import { ModifieroffreComponent } from 'app/pages/offre-management/modifieroffre/modifieroffre.component';
 import { CandidatureManagementComponent } from 'app/pages/candidature-management/candidature-management.component';
+import { AjoutCanditatureComponent } from 'app/pages/candidature-management/ajout-canditature/ajout-canditature.component';
 //////////////////////////////////////////////////
 
 
@@ -43,7 +44,8 @@ import { CandidatureManagementComponent } from 'app/pages/candidature-management
     OffreManagementComponent,
     AjouterComponent,
     ModifieroffreComponent,
-    CandidatureManagementComponent
+    CandidatureManagementComponent,
+    AjoutCanditatureComponent
   ],
   imports: [
     CommonModule,

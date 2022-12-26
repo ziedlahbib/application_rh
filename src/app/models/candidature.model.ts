@@ -1,6 +1,6 @@
 import { FileDB } from "./file-db.model";
 
 export class Candidature {
-    CandidatureId:Number;
+    candidatureId:Number;
     files:FileDB[];
 }

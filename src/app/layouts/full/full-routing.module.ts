@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from 'app/component/table/table.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { AjoutCanditatureComponent } from 'app/pages/candidature-management/ajout-canditature/ajout-canditature.component';
 import { CandidatureManagementComponent } from 'app/pages/candidature-management/candidature-management.component';
 import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.component';
 import { ModifieroffreComponent } from 'app/pages/offre-management/modifieroffre/modifieroffre.component';
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'gestion-des-offre',           component: OffreManagementComponent },
     { path: 'modifier/:id',           component: ModifieroffreComponent },
     { path: 'candidature-management',           component: CandidatureManagementComponent },
+    { path: 'ajout-canditature',           component: AjoutCanditatureComponent },
     
     
 ];

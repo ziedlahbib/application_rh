@@ -33,6 +33,7 @@ import { OffreManagementComponent } from './pages/offre-management/offre-managem
 import { AjouterComponent } from './pages/offre-management/ajouter/ajouter.component';
 import { ModifieroffreComponent } from './pages/offre-management/modifieroffre/modifieroffre.component';
 import { CandidatureManagementComponent } from './pages/candidature-management/candidature-management.component';
+import { AjoutCanditatureComponent } from './pages/candidature-management/ajout-canditature/ajout-canditature.component';
 
 
 
@@ -57,6 +58,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     NavigationComponent,
     SidebarComponent,
+    
     
    
 

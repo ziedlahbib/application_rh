@@ -1,5 +1,5 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">   
-    <button  type="button"class="btn btn-primary btn-round" style="margin: 10px 50px 20px;"  routerLink="/ajouterCanditature">ajouter</button>
+    <button  type="button"class="btn btn-primary btn-round" style="margin: 10px 50px 20px;"  routerLink="/ajout-canditature">ajouter</button>
     </div>
   
   
@@ -39,7 +39,7 @@
                             <th mat-header-cell *matHeaderCellDef> files </th>
                             <td mat-cell *matCellDef="let element">
                             <div *ngFor="let f of element.files">
-                              <a> {{f.name}}</a>
+                              <a href="http://localhost:8089/File/files/{{f.id}}"> {{f.name}}</a>
                             </div>  
                             </td>
                           </ng-container>

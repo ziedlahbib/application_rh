@@ -38,7 +38,7 @@ export class CandidatureManagementComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   supprimer(candidature :any){
-    this.cs.deletecanditature(candidature.CandidatureId).subscribe(()=>this.cs.getcandidatures().subscribe(
+    this.cs.deletecanditature(candidature.candidatureId).subscribe(()=>this.cs.getcandidatures().subscribe(
       data=>{
         this.listofcandidature=data;
         this.dataSource = new MatTableDataSource(this.listofcandidature);
