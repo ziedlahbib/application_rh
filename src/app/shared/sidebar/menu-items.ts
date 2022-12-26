@@ -11,7 +11,7 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/gestion-des-condidature',
+    path: '/candidature-management',
     title: 'gestion des condidature',
     icon: 'bi bi-people',
     class: '',

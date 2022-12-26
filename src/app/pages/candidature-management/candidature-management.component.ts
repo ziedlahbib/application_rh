@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class CandidatureManagementComponent implements OnInit {
 
   listofcandidature:Candidature[];
-  displayedColumns = ['id','file','option'];
+  displayedColumns = ['id','files','option'];
   dataSource: MatTableDataSource<Candidature>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -24,8 +24,8 @@ export class CandidatureManagementComponent implements OnInit {
   ngOnInit(): void {
     this.cs.getcandidatures().subscribe(
       data=>{
+        console.log(data)
         this.listofcandidature=data;
-        //this.listofuserPAgination=this.listofuser.slice(this.start, this.end);
         this.dataSource=new MatTableDataSource(this.listofcandidature);
         this.dataSource.paginator = this.paginator;
 

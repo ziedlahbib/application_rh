@@ -1,1 +1,89 @@
-<p>candidature-management works!</p>
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">   
+    <button  type="button"class="btn btn-primary btn-round" style="margin: 10px 50px 20px;"  routerLink="/ajouterCanditature">ajouter</button>
+    </div>
+  
+  
+     <div class="container-fluid mt--7">
+  
+  
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+  
+            <div class="card-header border-0">
+              <h3 class="mb-0">Canditature List</h3>
+            </div>
+  
+            <div>
+ 
+  
+                  <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Table with Border</h4>
+                        
+                        <mat-form-field>
+                          <mat-label></mat-label>
+                          <input matInput (keyup)="applyFilter($event)" placeholder="search" #input style="color: bisque;">
+                        </mat-form-field>
+                        
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Candidature </th>
+                            <td mat-cell *matCellDef="let element"> {{element.candidatureId}} </td>
+                          </ng-container>
+                        
+                          <!-- Name Column -->
+                          <ng-container matColumnDef="files">
+                            <th mat-header-cell *matHeaderCellDef> files </th>
+                            <td mat-cell *matCellDef="let element">
+                            <div *ngFor="let f of element.files">
+                              <a> {{f.name}}</a>
+                            </div>  
+                            </td>
+                          </ng-container>
+                          <!-- Name Column -->
+                          <!-- Weight Column -->
+                          <ng-container matColumnDef="option">
+                            <th mat-header-cell *matHeaderCellDef> option </th>
+                            <td mat-cell *matCellDef="let element"> 
+
+                                <div class="button-group">
+                                  <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    (click)="supprimer(element)">
+                                  supprimer
+                                  </button>
+                                </div>
+                             </td>
+                            
+                          </ng-container>
+                        
+                          <!-- Symbol Column -->
+                        
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        
+                          <!-- Row shown when there is no matching data. -->
+                          <tr class="mat-row" *matNoDataRow>
+                            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                          </tr>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons
+                            aria-label="Select page of periodic elements">
+                      </mat-paginator>
+                    </div>
+                
+
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
