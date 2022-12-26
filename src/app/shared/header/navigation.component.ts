@@ -1,5 +1,9 @@
 import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { User } from 'app/models/user.model';
+import { AuthServiceService } from 'app/service/auth-service.service';
+import { UserServiceService } from 'app/service/user-service.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 declare var $: any;
@@ -15,7 +19,12 @@ export class NavigationComponent implements AfterViewInit {
 
   public showSearch = false;
 
-  constructor(private modalService: NgbModal) {
+  user:User;
+  role:String;
+  isLoggedIn = false;
+  constructor(private modalService: NgbModal,
+    private router: Router,private us:UserServiceService,private route: ActivatedRoute,
+        private authenticationService: AuthServiceService) {
   }
 
   // This is for Notifications
@@ -111,5 +120,23 @@ export class NavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  ngAfterViewInit() { }
+  ngAfterViewInit(
+    
+  ) { 
+    this.us.getuserbyusername(sessionStorage.authenticatedUser).subscribe(
+      data=>{
+          this.user=data;
+          this.role=data.role;
+          console.log(data.role)
+      }
+   )
+   this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+   console.log('menu ->' + this.isLoggedIn);
+  }
+
+
+
+handleLogout() {
+  this.authenticationService.logout();
+}
 }

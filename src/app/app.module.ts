@@ -51,13 +51,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   declarations: [
     AppComponent,
     AuthLayoutComponent,
     FullComponent,
-    SpinnerComponent,
-    NavigationComponent,
-    SidebarComponent,
+ 
     
     
    

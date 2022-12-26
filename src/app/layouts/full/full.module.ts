@@ -33,12 +33,16 @@ import { ModifieroffreComponent } from 'app/pages/offre-management/modifieroffre
 import { CandidatureManagementComponent } from 'app/pages/candidature-management/candidature-management.component';
 import { AjoutCanditatureComponent } from 'app/pages/candidature-management/ajout-canditature/ajout-canditature.component';
 //////////////////////////////////////////////////
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
 
 @NgModule({
   declarations: [
+    SpinnerComponent,
+    NavigationComponent,
+    SidebarComponent,
     ModifierComponent,
     UserManagementComponent,
     OffreManagementComponent,
@@ -73,6 +77,6 @@ import { AjoutCanditatureComponent } from 'app/pages/candidature-management/ajou
   entryComponents: [],
   exports: [
     RouterModule
-  ]
+  ],
 })
 export class FullModule { }

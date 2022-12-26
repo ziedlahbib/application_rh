@@ -14,6 +14,7 @@ export class UserServiceService {
   getuserbyidUrl="/api/user/get-user";
   deleteuserUrl="/api/user/delete-user";
   getuserurl="/api/user/get-user";
+  getbyusernameurl="/api/user/get-userbyusername";
   constructor(private http : HttpClient) { }
   registration(user :User): Observable<User>{
     return this.http.post<User>(`${this.registartionurlUrl}`,user);
@@ -30,5 +31,9 @@ export class UserServiceService {
   }
   updateuser(id:Number,user:User): Observable<User>{
     return this.http.put<User>(`${this.updateuserUrl}/${id}`,user);
+  }
+  getuserbyusername(username:String): Observable<User>{
+    return this.http.get<User>(`${this.getbyusernameurl}/${username}`);
+
   }
 }
