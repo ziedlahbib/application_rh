@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from 'app/component/table/table.component';
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.component';
+import { ModifieroffreComponent } from 'app/pages/offre-management/modifieroffre/modifieroffre.component';
 import { OffreManagementComponent } from 'app/pages/offre-management/offre-management.component';
 import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.component';
 import { UserManagementComponent } from 'app/pages/user-management/user-management.component';
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path: 'user-management/modifier/:id',           component: ModifierComponent },
     { path: 'ajouteroffre',           component: AjouterComponent },
     { path: 'gestion-des-offre',           component: OffreManagementComponent },
+    { path: 'offre-management/modifier/:id',           component: ModifieroffreComponent },
     
     
 ];

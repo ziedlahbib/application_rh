@@ -31,6 +31,7 @@ import { UserManagementComponent } from './pages/user-management/user-management
 import { ToastrModule } from 'ngx-toastr';
 import { OffreManagementComponent } from './pages/offre-management/offre-management.component';
 import { AjouterComponent } from './pages/offre-management/ajouter/ajouter.component';
+import { ModifieroffreComponent } from './pages/offre-management/modifieroffre/modifieroffre.component';
 
 
 
@@ -55,6 +56,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SpinnerComponent,
     NavigationComponent,
     SidebarComponent,
+   
 
    
     

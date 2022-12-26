@@ -29,6 +29,7 @@ import { ModifierComponent } from 'app/pages/user-management/modifier/modifier.c
 import { UserManagementComponent } from 'app/pages/user-management/user-management.component';
 import { OffreManagementComponent } from 'app/pages/offre-management/offre-management.component';
 import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.component';
+import { ModifieroffreComponent } from 'app/pages/offre-management/modifieroffre/modifieroffre.component';
 //////////////////////////////////////////////////
 
 
@@ -40,6 +41,7 @@ import { AjouterComponent } from 'app/pages/offre-management/ajouter/ajouter.com
     UserManagementComponent,
     OffreManagementComponent,
     AjouterComponent,
+    ModifieroffreComponent,
   ],
   imports: [
     CommonModule,

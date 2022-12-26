@@ -10,6 +10,8 @@ export class OffreServiceService {
   getoffresUrl="/api/offre/getAllOffre";
   deleteoffreUrl="/api/offre/supprimer-offre";
   ajoutoffreurl="/api/offre/add-offre";
+  updateoffreurl="/api/offre/";
+  getoffrebyIdurl="/api/offre/get-offre"
 
   constructor(private http : HttpClient) { }
 
@@ -21,6 +23,12 @@ export class OffreServiceService {
   }
   ajoutoffre(offre :Offre): Observable<Offre>{
     return this.http.post<Offre>(`${this.ajoutoffreurl}`,offre);
+  }
+  getoffrebyid(id:number): Observable<Offre>{
+    return this.http.get<Offre>(`${this.getoffrebyIdurl}/${id}`);
 
+  }
+  updateoffre(id:Number,offre:Offre): Observable<Offre>{
+    return this.http.put<Offre>(`${this.updateoffreurl}/${id}`,offre);
   }
 }
