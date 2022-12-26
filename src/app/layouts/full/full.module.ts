@@ -40,9 +40,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
-    SpinnerComponent,
-    NavigationComponent,
-    SidebarComponent,
     ModifierComponent,
     UserManagementComponent,
     OffreManagementComponent,

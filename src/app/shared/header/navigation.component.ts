@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit, EventEmitter, Output, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'app/models/user.model';
@@ -12,7 +12,7 @@ declare var $: any;
   selector: 'app-navigation',
   templateUrl: './navigation.component.html'
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent implements AfterViewInit,OnInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
@@ -25,6 +25,17 @@ export class NavigationComponent implements AfterViewInit {
   constructor(private modalService: NgbModal,
     private router: Router,private us:UserServiceService,private route: ActivatedRoute,
         private authenticationService: AuthServiceService) {
+  }
+  ngOnInit(): void {
+    this.us.getuserbyusername(sessionStorage.authenticatedUser).subscribe(
+      data=>{
+          this.user=data;
+          this.role=data.role;
+          console.log(data.role)
+      }
+   )
+   this.isLoggedIn = this.authenticationService.isUserLoggedIn();
+   console.log('menu ->' + this.isLoggedIn);
   }
 
   // This is for Notifications
@@ -123,15 +134,7 @@ export class NavigationComponent implements AfterViewInit {
   ngAfterViewInit(
     
   ) { 
-    this.us.getuserbyusername(sessionStorage.authenticatedUser).subscribe(
-      data=>{
-          this.user=data;
-          this.role=data.role;
-          console.log(data.role)
-      }
-   )
-   this.isLoggedIn = this.authenticationService.isUserLoggedIn();
-   console.log('menu ->' + this.isLoggedIn);
+  
   }
 
 

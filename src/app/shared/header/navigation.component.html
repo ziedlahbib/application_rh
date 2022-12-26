@@ -18,10 +18,28 @@
   <!-- User profile and search -->
   <!-- ============================================================== -->
   <li class="nav-item" ngbDropdown placement="bottom-end">
+    <a
+      ngbDropdownToggle
+      class="nav-link waves-effect waves-dark pro-pic"
+      href="javascript:void(0)"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <img
+        src="assets/images/users/user1.jpg"
+        alt="user"
+        class="rounded-circle"
+        width="31"
+      />
+      <span class="ms-2">{{user.userName}}</span>
+    </a>
     <div class="dropdown-menu-right" ngbDropdownMenu>
-      <a class="dropdown-item" *ngIf="isLoggedIn" routerLink="/login" (click)="handleLogout()"> Logout</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" routerLink="/login" (click)="handleLogout()"> Logout</a>
     </div>
   </li>
+
   <!-- ============================================================== -->
   <!-- User profile and search -->
   <!-- ============================================================== -->

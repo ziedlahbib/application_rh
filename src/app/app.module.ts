@@ -58,6 +58,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AppComponent,
     AuthLayoutComponent,
     FullComponent,
+    SpinnerComponent,
+    NavigationComponent,
+    SidebarComponent,
  
     
     
